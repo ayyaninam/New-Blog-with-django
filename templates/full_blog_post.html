@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container my-3">
+    <div class="banner p-4 p-md-5 mb-4 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 fst-italic">{{post.0.title}} <span>
+                    <h6>by: {{post.0.author}} on {{post.0.date_posted}}</h6>
+                </span></h1>
+            <p class="lead my-3">{{post.0.description|slice:":190"}}.................</p>
+        </div>
+    </div>
+</div>
+</div>
+<div class="container my6">
+    <h1>{{post.0.title}}</h1>
+    <h6>by: {{post.0.author}} on {{post.0.date_posted}}</h6>
+    <hr>
+    <img src="/media/{{post.0.front_banner}}" class="card-img-top" alt="...">
+    <hr class="my-5">
+    <p id="para">{{post.0.description}}</p>
+    <style>        
+
+
+        .banner {
+            background-image: url("https://source.unsplash.com/1600x900/?code,programer");
+        }
+
+        .banner h1,
+        .banner p {
+            font-style: italic;
+        }
+
+        .banner img {
+            opacity: 0.4;
+        }
+    </style>
+    {% endblock body %}
